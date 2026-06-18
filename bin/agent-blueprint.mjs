@@ -23,6 +23,8 @@ const templates = {
 const requiredRepoFiles = [
   "README.md",
   "docs/START_HERE.md",
+  "docs/TEST_MAIN_REFERENCE_CATALOG.md",
+  "docs/INSTALL_RECIPES.md",
   "docs/AGENTS.md",
   "docs/RAG_NODES.md",
   "docs/FREE_STORAGE_AND_HOSTING.md",

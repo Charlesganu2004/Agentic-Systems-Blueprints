@@ -2,10 +2,12 @@
 
 Private reusable repo for learning, designing, and installing custom agent systems, LLM applications, ML workflows, RAG nodes, and free/low-cost hosted knowledge infrastructure.
 
-This is intentionally not an app-specific agent copy. Use it as a blueprint library when a new project needs different agents, different data, different business rules, or a different RAG/ML setup.
+This is intentionally not an app-specific agent copy. It stores the reusable public repos, docs, install commands, and neutral templates discovered while working on the `Test_main` branch of the ElectroVision project. Use it when a new project needs different agents, different data, different business rules, or a different RAG/ML setup.
 
 ## What Is Inside
 
+- A catalog of public repos and docs used as references on the ElectroVision `Test_main` branch.
+- Install recipes for agent frameworks, RAG stacks, vector databases, frontend/mobile starters, pitch tools, and prompt-compression references.
 - Guides for building custom agents, LLM apps, RAG systems, and lightweight ML features.
 - Templates for a generic Node RAG API, custom agent rosters, and portable RAG node schemas.
 - Free/low-cost hosting and storage notes for Upstash Vector, Supabase, Neon, Qdrant Cloud, Cloudflare Workers, Vercel, Render, and local development.
@@ -14,10 +16,10 @@ This is intentionally not an app-specific agent copy. Use it as a blueprint libr
 
 ## Quick Install
 
-After this private repo is pushed to GitHub:
+After this private repo is pushed to your personal GitHub:
 
 ```bash
-npm install -g git+https://github.com/ElectroVisionLLC/Agentic-Systems-Blueprints.git
+npm install -g git+https://github.com/Charlesganu2004/Agentic-Systems-Blueprints.git
 agent-blueprint list
 ```
 
@@ -54,17 +56,20 @@ agent-blueprint init ./my-project --template rag-node-schema
 ## Recommended Learning Path
 
 1. Read `docs/START_HERE.md`.
-2. Pick an architecture in `docs/AGENTS.md`.
-3. Choose RAG storage from `docs/FREE_STORAGE_AND_HOSTING.md`.
-4. Use `templates/agent-roster` to design project-specific agents.
-5. Use `templates/rag-node-schema` to define the project's knowledge shape.
-6. Use `templates/node-rag-agent` when a project needs a working Node RAG service.
-7. Run evaluation and safety checks from `docs/EVALUATION_AND_TESTING.md` and `docs/SECURITY_PRIVACY.md`.
+2. Review `docs/TEST_MAIN_REFERENCE_CATALOG.md` for the repos and docs used on ElectroVision `Test_main`.
+3. Use `docs/INSTALL_RECIPES.md` to install the pieces a new project actually needs.
+4. Pick an architecture in `docs/AGENTS.md`.
+5. Choose RAG storage from `docs/FREE_STORAGE_AND_HOSTING.md`.
+6. Use `templates/agent-roster` to design project-specific agents.
+7. Use `templates/rag-node-schema` to define the project's knowledge shape.
+8. Use `templates/node-rag-agent` when a project needs a working Node RAG service.
+9. Run evaluation and safety checks from `docs/EVALUATION_AND_TESTING.md` and `docs/SECURITY_PRIVACY.md`.
 
 ## Rules
 
 - Do not hard-code API keys.
 - Do not copy private app agents into unrelated projects.
+- Use the reference repos as source material and patterns, not as hidden copied code.
 - Do not expose internal agent dashboards to customers without authentication and business/legal review.
 - Store reusable knowledge in source-backed RAG nodes before spending model or web tokens repeatedly.
 - Keep every agent replaceable, auditable, and tied to a clear business or user outcome.
