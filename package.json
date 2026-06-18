@@ -1,0 +1,36 @@
+{
+  "name": "@private/agentic-systems-blueprints",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Private reusable blueprints for building custom agents, LLM apps, ML workflows, RAG nodes, and hosted knowledge systems.",
+  "bin": {
+    "agent-blueprint": "bin/agent-blueprint.mjs",
+    "agents-blueprint": "bin/agent-blueprint.mjs"
+  },
+  "scripts": {
+    "list": "node bin/agent-blueprint.mjs list",
+    "doctor": "node bin/agent-blueprint.mjs doctor .",
+    "verify": "node --check bin/agent-blueprint.mjs && node --check templates/node-rag-agent/src/index.js && node --check templates/node-rag-agent/src/knowledgeStore.js && node --check templates/node-rag-agent/src/promptPolicy.js && npm run doctor"
+  },
+  "files": [
+    "bin",
+    "docs",
+    "examples",
+    "templates",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "agents",
+    "llm",
+    "rag",
+    "machine-learning",
+    "vector-database",
+    "node",
+    "templates"
+  ],
+  "license": "UNLICENSED"
+}

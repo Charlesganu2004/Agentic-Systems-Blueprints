@@ -1,0 +1,24 @@
+[
+  {
+    "id": "source:project-readme",
+    "type": "source",
+    "title": "Project README",
+    "text": "Summarize the project README here after reviewing it.",
+    "sourceUrl": "README.md",
+    "tags": ["project", "overview"],
+    "region": "global",
+    "confidence": "draft",
+    "updatedAt": "2026-06-18T00:00:00.000Z"
+  },
+  {
+    "id": "decision:rag-first",
+    "type": "decision",
+    "title": "Search project knowledge before web/model calls",
+    "text": "The project should search local or hosted knowledge first to reduce repeated model usage and preserve source-backed context.",
+    "sourceUrl": "docs/RAG_NODES.md",
+    "tags": ["rag", "policy", "cost-control"],
+    "region": "global",
+    "confidence": "source-backed",
+    "updatedAt": "2026-06-18T00:00:00.000Z"
+  }
+]

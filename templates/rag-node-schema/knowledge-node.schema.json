@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "KnowledgeNode",
+  "type": "object",
+  "required": ["id", "type", "title", "text", "sourceUrl"],
+  "properties": {
+    "id": { "type": "string" },
+    "type": {
+      "type": "string",
+      "examples": ["source", "formula", "policy", "decision", "issue-summary", "test-evidence"]
+    },
+    "title": { "type": "string" },
+    "text": { "type": "string" },
+    "sourceUrl": { "type": "string" },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "region": { "type": "string" },
+    "confidence": {
+      "type": "string",
+      "enum": ["draft", "source-backed", "verified", "stale", "needs-review"]
+    },
+    "updatedAt": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Agent",
+  "type": "object",
+  "required": ["id", "name", "role", "outcome", "boundaries"],
+  "properties": {
+    "id": { "type": "string" },
+    "name": { "type": "string" },
+    "role": { "type": "string" },
+    "seniority": { "type": "string" },
+    "outcome": { "type": "string" },
+    "tools": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "boundaries": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "reviewGates": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  }
+}
