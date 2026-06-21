@@ -17,6 +17,7 @@ Use these as learning references and benchmarks. Do not copy code into a project
 
 | Source | Link | Why It Matters |
 |--------|------|----------------|
+| HKUDS LightRAG | https://github.com/HKUDS/LightRAG | Graph-based RAG framework and REST API server for LLM apps that need richer cross-document retrieval than vector search alone. |
 | Upstash Vector | https://upstash.com/docs/vector/overall/getstarted | Serverless vector database option for quick hosted RAG prototypes. |
 | Supabase Vector | https://supabase.com/docs/guides/ai/vector-columns | Postgres/pgvector approach for vectors plus app data. |
 | Neon pgvector | https://neon.com/docs/extensions/pgvector | Serverless Postgres with pgvector support. |

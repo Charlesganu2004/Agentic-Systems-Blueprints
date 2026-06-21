@@ -7,7 +7,7 @@ This is intentionally not an app-specific agent copy. It stores the reusable pub
 ## What Is Inside
 
 - A catalog of public repos and docs used as references on the ElectroVision `Test_main` branch.
-- Install recipes for agent frameworks, RAG stacks, vector databases, frontend/mobile starters, pitch tools, and prompt-compression references.
+- Install recipes for agent frameworks, LightRAG graph-RAG, RAG stacks, vector databases, frontend/mobile starters, pitch tools, and prompt-compression references.
 - Guides for building custom agents, LLM apps, RAG systems, and lightweight ML features.
 - Templates for a generic Node RAG API, custom agent rosters, and portable RAG node schemas.
 - Free/low-cost hosting and storage notes for Upstash Vector, Supabase, Neon, Qdrant Cloud, Cloudflare Workers, Vercel, Render, and local development.
@@ -50,20 +50,23 @@ agent-blueprint init ./my-project --template rag-node-schema
 | Template | Use |
 |----------|-----|
 | `node-rag-agent` | Start a Node API with knowledge upsert/search endpoints, agent registry, prompt policy, and hosted-vector-ready configuration. |
+| `lightrag-service` | Add LightRAG sidecar setup notes for graph-based RAG behind an LLM app. |
 | `agent-roster` | Define project-specific agents with charters, boundaries, routing, and collaboration rules. |
 | `rag-node-schema` | Define source-backed knowledge nodes, source records, tags, region, and confidence metadata. |
 
 ## Recommended Learning Path
 
 1. Read `docs/START_HERE.md`.
-2. Review `docs/TEST_MAIN_REFERENCE_CATALOG.md` for the repos and docs used on ElectroVision `Test_main`.
-3. Use `docs/INSTALL_RECIPES.md` to install the pieces a new project actually needs.
-4. Pick an architecture in `docs/AGENTS.md`.
-5. Choose RAG storage from `docs/FREE_STORAGE_AND_HOSTING.md`.
-6. Use `templates/agent-roster` to design project-specific agents.
-7. Use `templates/rag-node-schema` to define the project's knowledge shape.
-8. Use `templates/node-rag-agent` when a project needs a working Node RAG service.
-9. Run evaluation and safety checks from `docs/EVALUATION_AND_TESTING.md` and `docs/SECURITY_PRIVACY.md`.
+2. Review `docs/REPOS_USED_ON_TEST_MAIN.md` for the clean GitHub repo list.
+3. Review `docs/TEST_MAIN_REFERENCE_CATALOG.md` for the repos and docs used on ElectroVision `Test_main`.
+4. Use `docs/INSTALL_RECIPES.md` to install the pieces a new project actually needs.
+5. Pick an architecture in `docs/AGENTS.md`.
+6. Use LightRAG when the project needs graph-based RAG or cross-document reasoning.
+7. Choose RAG storage from `docs/FREE_STORAGE_AND_HOSTING.md`.
+8. Use `templates/agent-roster` to design project-specific agents.
+9. Use `templates/rag-node-schema` to define the project's knowledge shape.
+10. Use `templates/node-rag-agent` when a project needs a working Node RAG service.
+11. Run evaluation and safety checks from `docs/EVALUATION_AND_TESTING.md` and `docs/SECURITY_PRIVACY.md`.
 
 ## Rules
 

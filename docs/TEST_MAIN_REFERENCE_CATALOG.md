@@ -17,6 +17,7 @@ This catalog lists the public repos, docs, and services referenced while buildin
 
 | Source | Link | Use In Future Projects |
 |--------|------|------------------------|
+| HKUDS LightRAG | https://github.com/HKUDS/LightRAG | Preferred graph-based RAG reference for LLM systems that need entity/relation extraction, cross-document reasoning, multimodal parsing, REST API integration, and knowledge graph plus vector retrieval. |
 | AKADATA Node RAG article | https://articles.akadata.ltd/how-to-build-a-node-based-rag-system/ | Concept walkthrough for Node-based RAG systems. |
 | varunon9 RAG LangChain Node.js | https://github.com/varunon9/rag-langchain-nodejs | Node/LangChain retrieval-before-generation reference. |
 | Brady Gaster AugmentR | https://github.com/bradygaster/AugmentR | URL/list ingestion into a RAG-style knowledge flow. |

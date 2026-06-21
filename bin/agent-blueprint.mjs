@@ -12,6 +12,9 @@ const templates = {
   "node-rag-agent": {
     description: "Express + hosted-vector-ready RAG API with generic agent registry and local dev fallback."
   },
+  "lightrag-service": {
+    description: "LightRAG sidecar setup notes for graph-based RAG behind any LLM app."
+  },
   "agent-roster": {
     description: "Markdown agent charters, routing notes, and a JSON schema for creating unique project agents."
   },
@@ -24,6 +27,7 @@ const requiredRepoFiles = [
   "README.md",
   "docs/START_HERE.md",
   "docs/TEST_MAIN_REFERENCE_CATALOG.md",
+  "docs/REPOS_USED_ON_TEST_MAIN.md",
   "docs/INSTALL_RECIPES.md",
   "docs/AGENTS.md",
   "docs/RAG_NODES.md",
@@ -32,6 +36,7 @@ const requiredRepoFiles = [
   "docs/ML_WORKFLOWS.md",
   "templates/node-rag-agent/package.json",
   "templates/node-rag-agent/src/index.js",
+  "templates/lightrag-service/README.md",
   "templates/agent-roster/agents/_template.md",
   "templates/rag-node-schema/knowledge-node.schema.json"
 ];

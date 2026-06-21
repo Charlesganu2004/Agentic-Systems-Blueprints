@@ -44,6 +44,42 @@ Reference: https://ts.llamaindex.ai/
 
 ## RAG And Vector Storage
 
+### LightRAG Graph RAG
+
+Use LightRAG when the project needs more than plain vector search: knowledge-graph extraction, entity/relation retrieval, cross-document reasoning, multimodal document parsing, and a REST API/WebUI RAG service that a Node app can call.
+
+Recommended server install with `uv`:
+
+```bash
+uv tool install "lightrag-hku[api]"
+lightrag-server
+```
+
+Alternative Python virtual environment:
+
+```bash
+python -m venv .venv
+# Linux/macOS:
+source .venv/bin/activate
+# Windows PowerShell:
+# .venv\Scripts\Activate.ps1
+pip install "lightrag-hku[api]"
+lightrag-server
+```
+
+Source/Docker path:
+
+```bash
+git clone https://github.com/HKUDS/LightRAG.git
+cd LightRAG
+cp env.example .env
+docker compose up
+```
+
+Integration rule: keep LightRAG as a sidecar RAG service. Your app calls LightRAG's REST API first, then sends retrieved context to the LLM response layer.
+
+Reference: https://github.com/HKUDS/LightRAG
+
 ### Upstash Vector
 
 ```bash
