@@ -1,4 +1,5 @@
 import "dotenv/config";
+import { timingSafeEqual } from "node:crypto";
 import express from "express";
 import cors from "cors";
 import { listAgents } from "./agentRegistry.js";
@@ -7,16 +8,48 @@ import { classifyRisk, compactContext } from "./promptPolicy.js";
 
 const app = express();
 const port = Number(process.env.PORT || 8787);
+const host = process.env.HOST || "127.0.0.1";
+const apiToken = process.env.API_TOKEN?.trim();
+const corsOrigin = process.env.CORS_ORIGIN?.trim();
+const loopbackHosts = new Set(["127.0.0.1", "::1", "localhost"]);
 
-app.use(cors());
+app.disable("x-powered-by");
+
+if (!loopbackHosts.has(host) && !apiToken) {
+  throw new Error("API_TOKEN is required when HOST is not a loopback address.");
+}
+
+if (corsOrigin) {
+  app.use(cors({ origin: corsOrigin }));
+}
+
+app.use((req, res, next) => {
+  if (req.path === "/health" || !apiToken) {
+    next();
+    return;
+  }
+
+  const provided = req.get("authorization")?.replace(/^Bearer\s+/i, "") || "";
+  const expectedBytes = Buffer.from(apiToken);
+  const providedBytes = Buffer.from(provided);
+  const authorized =
+    expectedBytes.length === providedBytes.length &&
+    timingSafeEqual(expectedBytes, providedBytes);
+
+  if (!authorized) {
+    res.status(401).json({ ok: false, error: "Unauthorized" });
+    return;
+  }
+
+  next();
+});
+
 app.use(express.json({ limit: "1mb" }));
 
 app.get("/health", (_req, res) => {
   res.json({
     ok: true,
-    service: "node-rag-agent-starter",
-    knowledgeProvider: process.env.UPSTASH_VECTOR_REST_URL ? "upstash-vector" : "local-json-dev",
-    namespace: process.env.KNOWLEDGE_NAMESPACE || "default-project"
+    service: "node-rag-agent-starter"
   });
 });
 
@@ -62,6 +95,6 @@ app.use((error, _req, res, _next) => {
   });
 });
 
-app.listen(port, () => {
-  console.log(`Agent RAG starter on http://localhost:${port}`);
+app.listen(port, host, () => {
+  console.log(`Agent RAG starter on http://${host}:${port}`);
 });

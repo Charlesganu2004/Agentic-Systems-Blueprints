@@ -23,6 +23,11 @@ Open:
 http://localhost:8787/health
 ```
 
+The starter binds to `127.0.0.1` and disables cross-origin browser access by default. To expose it
+on a network, set `HOST` explicitly and set a strong `API_TOKEN`; non-loopback startup fails without
+that token. Set `CORS_ORIGIN` only to the exact trusted frontend origin that needs browser access.
+All endpoints except `/health` then require `Authorization: Bearer <API_TOKEN>`.
+
 ## Endpoints
 
 - `GET /health`
