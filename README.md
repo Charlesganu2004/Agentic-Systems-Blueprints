@@ -16,8 +16,6 @@ This is intentionally not an app-specific agent copy. It stores the reusable pub
 
 ## Quick Install
 
-After this private repo is pushed to your personal GitHub:
-
 ```bash
 npm install -g git+https://github.com/Charlesganu2004/Agentic-Systems-Blueprints.git
 agent-blueprint list
@@ -32,6 +30,12 @@ npm install
 cp .env.example .env
 npm start
 ```
+
+The `node-rag-agent` starter binds to `127.0.0.1` and keeps cross-origin browser access off
+until you name an exact origin. To reach it over a network, set `HOST` and a strong
+`API_TOKEN` — it refuses to start on a non-loopback address without one — and every endpoint
+except `/health` then requires `Authorization: Bearer <API_TOKEN>`. Templates get copied into
+real projects, so the default posture is the one that ships.
 
 Create a custom agent roster template:
 
@@ -71,6 +75,8 @@ agent-blueprint init ./my-project --template rag-node-schema
 ## Rules
 
 - Do not hard-code API keys.
+- Do not weaken a template's defaults to make local testing easier. Whatever a template
+  ships with becomes the security posture of every project generated from it.
 - Do not copy private app agents into unrelated projects.
 - Use the reference repos as source material and patterns, not as hidden copied code.
 - Do not expose internal agent dashboards to customers without authentication and business/legal review.
